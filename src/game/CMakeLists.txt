@@ -1,5 +1,8 @@
 set(EXECUTABLE_NAME "hildr")
 
+include_directories( ${SFGUI_INCLUDE_DIR} )
+include_directories(${OPENGL_INCLUDE_DIR})
+
 file(
     GLOB_RECURSE
     SOURCE_FILES
@@ -11,4 +14,4 @@ add_executable(
     ${SOURCE_FILES}
 )
 
-target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFGUI_LIBRARY} ${OPENGL_LIBRARIES})
