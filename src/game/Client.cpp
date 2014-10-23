@@ -17,14 +17,26 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#include "Client.h"
 
-int main(int argc, char **argv)
+Client::Client()
+:m_connected(false)
 {
-	Game game;
+}
 
-	while (game.frame());
+bool Client::connect(std::string host, unsigned int tcpPort, unsigned int udpPort)
+{
+	// TODO implement connection
+	m_connected = true;
+	return m_connected;
+}
 
-	return 0;
+bool Client::isConnected()
+{
+	return m_connected;
+}
+
+World* Client::getWorld()
+{
+	return &m_world;
 }

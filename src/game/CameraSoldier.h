@@ -17,14 +17,20 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef CAMERA_SOLDIER_H
+#define CAMERA_SOLDIER_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+#include "Camera.h"
+#include "Player.h"
 
-	while (game.frame());
+class CameraSoldier : public Camera {
+	public:
+		CameraSoldier(Player *player);
+		virtual void updateView(void);
+	private:
+		const float CAMERA_HEIGHT = 5.0; // Camera height above the player's head
 
-	return 0;
-}
+		Player *m_player;
+};
+
+#endif

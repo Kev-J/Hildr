@@ -17,14 +17,31 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef PLAYER_H
+#define PLAYER_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+#include <SFML/System.hpp>
 
-	while (game.frame());
+class Player {
+	public:
+		Player();
 
-	return 0;
-}
+		void moveForward(bool move);
+		void moveBackward(bool move);
+		void moveLeft(bool move);
+		void moveRight(bool move);
+
+		void update(void);
+		void draw(void);
+		float getPosX();
+		float getPosY();
+		void setDirection(float angle); // In degrees
+	private:
+		float m_posX, m_posY; // in meters
+		float m_direction; // in degrees
+		bool m_isMovingForward, m_isMovingBackward;
+		bool m_isMovingLeft, m_isMovingRight;
+		sf::Clock m_clockForward;
+};
+
+#endif

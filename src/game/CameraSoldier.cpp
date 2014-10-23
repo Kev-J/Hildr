@@ -17,14 +17,21 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
 #include <SFML/OpenGL.hpp>
 
-int main(int argc, char **argv)
+#include "CameraSoldier.h"
+
+CameraSoldier::CameraSoldier(Player *player)
+:m_player(player)
 {
-	Game game;
 
-	while (game.frame());
+}
 
-	return 0;
+void CameraSoldier::updateView()
+{
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(m_player->getPosX(), CAMERA_HEIGHT, m_player->getPosY(), // Follow the player location
+		m_player->getPosX(), 0.0, m_player->getPosY(), // Follow the player location
+		0.0, 0.0, 1.0); // The camera axis cannot be the viewing direction
 }

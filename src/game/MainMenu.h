@@ -17,14 +17,32 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef MAIN_MENU_H
+#define MAIN_MENU_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+#include <SFGUI/SFGUI.hpp>
 
-	while (game.frame());
+#include "Client.h"
 
-	return 0;
-}
+class MainMenu {
+	public:
+		MainMenu(sfg::SFGUI *sfgui, Client *client);
+		void show();
+		void close();
+		void draw();
+		void handleEvent(sf::Event &event);
+		void startGameCallBack();
+		void quitCallBack();
+		bool isVisible();
+		bool quitRequested();
+	
+	private:
+		sfg::SFGUI *m_sfgui;
+		Client *m_client;
+		sf::Clock m_clock;
+		sfg::Desktop m_desktop;
+		bool m_visible;
+		bool m_quit;
+};
+
+#endif

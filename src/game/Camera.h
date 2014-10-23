@@ -17,14 +17,12 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef CAMERA_H
+#define CAMERA_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+class Camera {
+	public:
+		virtual void updateView(void) = 0;
+};
 
-	while (game.frame());
-
-	return 0;
-}
+#endif

@@ -17,14 +17,23 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
+#include "Map.h"
+
 #include <SFML/OpenGL.hpp>
 
-int main(int argc, char **argv)
+#include <iostream>
+
+void Map::draw(void)
 {
-	Game game;
-
-	while (game.frame());
-
-	return 0;
+	// Draw a dummy grid
+	glMatrixMode(GL_MODELVIEW);
+	for (float x = -10.0f ; x < 10.0f ; x+=1.0f) {
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glBegin(GL_LINES);
+			glVertex3f(x,0.0f,10.0f);
+			glVertex3f(x,0.0f,-10.0f);
+			glVertex3f(10.0f,-0.0f,x);
+			glVertex3f(-10.0f,-0.0f,x);
+		glEnd();
+	}
 }

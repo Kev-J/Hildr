@@ -17,14 +17,27 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef WORLD_H
+#define WORLD_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+#include <SFML/Window.hpp>
 
-	while (game.frame());
+#include "Map.h"
+#include "Camera.h"
+#include "Player.h"
 
-	return 0;
-}
+class World {
+	public:
+		World();
+		~World();
+		void draw(void);
+		Map* getMap(void);
+		void update(void);
+		void handleEvent(sf::Event event);
+	private:
+		Map m_map;
+		Camera *m_camera;
+		Player m_player;
+};
+
+#endif

@@ -17,14 +17,12 @@
  * along with Hildr.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-#include "Game.h"
-#include <SFML/OpenGL.hpp>
+#ifndef MAP_H
+#define MAP_H
 
-int main(int argc, char **argv)
-{
-	Game game;
+class Map {
+	public:
+		void draw();
+};
 
-	while (game.frame());
-
-	return 0;
-}
+#endif
