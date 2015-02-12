@@ -31,7 +31,7 @@ class Game {
 	public:
 		Game();
 		~Game();
-		bool frame(void);
+		bool frame(void); /* Compute next frame of the game */
 	private:
 		sfg::SFGUI m_sfgui;
 		sf::RenderWindow *m_window;

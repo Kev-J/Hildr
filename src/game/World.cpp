@@ -103,6 +103,5 @@ void World::handleEvent(sf::Event event)
 
 void World::update()
 {
-	// Update all entities status and positions
 	m_player.update();
 }

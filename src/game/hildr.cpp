@@ -24,7 +24,9 @@ int main(int argc, char **argv)
 {
 	Game game;
 
-	while (game.frame());
+        /* Start game loop */
+	while (game.frame())
+            ;
 
 	return 0;
 }

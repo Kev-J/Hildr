@@ -30,10 +30,19 @@ class World {
 	public:
 		World();
 		~World();
+
+		/* Draw the world to the screen */
 		void draw(void);
-		Map* getMap(void);
+		
+		/* Update all entities status and player positions */
 		void update(void);
+
+		/* Handle keyboard, mouse, joystick ... */
 		void handleEvent(sf::Event event);
+
+		/* Accessors */
+		Map* getMap(void);
+
 	private:
 		Map m_map;
 		Camera *m_camera;
