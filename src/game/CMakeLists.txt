@@ -6,7 +6,6 @@ include_directories(${OPENGL_INCLUDE_DIR})
 set(HILDR_LIBRARIES_PATH ${CMAKE_SOURCE_DIR}/src/libraries/)
 
 include_directories(${HILDR_LIBRARIES_PATH}/hildr-map/include)
-message(${HILDR_LIBRARIES_PATH})
 
 file(
     GLOB_RECURSE
