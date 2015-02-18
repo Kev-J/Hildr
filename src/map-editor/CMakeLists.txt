@@ -30,6 +30,7 @@ add_executable(
 )
 
 target_link_libraries(${EXECUTABLE_NAME}
+	${SFML_LIBRARIES}
 	${OPENGL_LIBRARIES}
 	${QT_LIBRARIES}
 	hildr-map
