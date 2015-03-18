@@ -33,5 +33,6 @@ If at this point, SFML is not found, please try:
 
 $ cmake .. -DCMAKE_MODULE_PATH:PATH=/usr/share/SFML/cmake/Modules
 
-# make install
+In root:
 
+$ make install
