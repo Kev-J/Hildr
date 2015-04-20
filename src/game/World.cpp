@@ -33,6 +33,15 @@ World::~World()
 	delete m_camera;
 }
 
+bool World::load(sf::String mapName)
+{
+    if (!m_map.load(mapName)) {
+        return false;
+    }
+
+    return true;
+}
+
 void World::draw()
 {
 	m_camera->updateView(); // Set the camera first

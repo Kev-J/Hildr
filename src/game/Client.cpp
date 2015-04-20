@@ -27,6 +27,11 @@ Client::Client()
 bool Client::connect(std::string host, unsigned int tcpPort, unsigned int udpPort)
 {
 	// TODO implement connection
+        if (!m_world.load("test-map")) {
+            std::cout << "Unable to load map" << std::endl;
+            return false;
+        }
+
 	m_connected = true;
 	return m_connected;
 }

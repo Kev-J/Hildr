@@ -1,6 +1,7 @@
 set(EXECUTABLE_NAME "hildr-map-editor")
 
 include_directories(${OPENGL_INCLUDE_DIR})
+include_directories(${XERCESC_INCLUDE_DIRS})
 
 set(HILDR_LIBRARIES_PATH ${CMAKE_SOURCE_DIR}/src/libraries/)
 
@@ -33,5 +34,7 @@ target_link_libraries(${EXECUTABLE_NAME}
 	${SFML_LIBRARIES}
 	${OPENGL_LIBRARIES}
 	${QT_LIBRARIES}
+        ${XERCESC_LIBRARIES}
 	hildr-map
+	hildr-tools
 	)

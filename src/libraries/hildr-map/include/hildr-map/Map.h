@@ -20,9 +20,27 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <vector>
+
+#include <SFML/System.hpp>
+#include <xercesc/dom/DOM.hpp>
+
+#include "Texture.h"
+
 class Map {
-	public:
-		void draw();
+    public:
+        Map(void);
+        bool load(sf::String mapName);
+        void unload(void);
+        void draw();
+
+    private:
+        void loadTextures(xercesc::DOMNode *textureNode);
+
+    private:
+        sf::String m_mapName;
+        bool m_loaded;
+        std::vector<Texture*> m_textures;
 };
 
 #endif

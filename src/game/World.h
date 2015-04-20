@@ -22,7 +22,8 @@
 
 #include <SFML/Window.hpp>
 
-#include "Map.h"
+#include <hildr-map/Map.h>
+
 #include "Camera.h"
 #include "Player.h"
 
@@ -30,6 +31,8 @@ class World {
 	public:
 		World();
 		~World();
+
+		bool load(sf::String mapName);
 
 		/* Draw the world to the screen */
 		void draw(void);

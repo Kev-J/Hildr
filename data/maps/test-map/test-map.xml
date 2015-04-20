@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
-<general>
-    <name>test-map</name>
-    <author>Hildr</name>
-    <version>0.1</name>
-    <x_dimension>10</x_dimension>
-    <y_dimension>10</y_dimension>
-</general>
-<textures>
-    <texture name="gravel">gravel.jpg<texture/>
-</textures>
+<map>
+    <general>
+        <name>test-map</name>
+        <author>Hildr</author>
+        <version>0.1</version>
+        <x_dimension>10</x_dimension>
+        <y_dimension>10</y_dimension>
+    </general>
+    <textures>
+        <texture name="gravel">gravel.jpg</texture>
+    </textures>
+</map>

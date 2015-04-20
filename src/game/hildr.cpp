@@ -18,15 +18,24 @@
  * 
  */
 #include "Game.h"
+
 #include <SFML/OpenGL.hpp>
+#include <hildr-tools/hildr-tools.h>
 
 int main(int argc, char **argv)
 {
 	Game game;
 
+        if (!HildrTools::XmlConfig::initializeSubsystem()) {
+            std::cerr << "Unable to initialize" << std::endl;
+            return -1;
+        }
+
         /* Start game loop */
 	while (game.frame())
             ;
+
+        HildrTools::XmlConfig::terminateSubsystem();
 
 	return 0;
 }
