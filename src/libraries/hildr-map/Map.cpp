@@ -114,6 +114,7 @@ void Map::loadTextures(xercesc::DOMNode *textureNode)
 void Map::unload()
 {
     for (int i = 0 ; i < m_textures.size() ; i++) {
+        m_textures[i]->unload();
         delete m_textures[i];
     }
 
@@ -124,7 +125,6 @@ void Map::unload()
 
 void Map::draw(void)
 {
-
     if (m_textures.size() > 0) {
         glEnable(GL_TEXTURE_2D);
         sf::Texture::bind(m_textures[0]->getTexture());
@@ -140,16 +140,4 @@ void Map::draw(void)
             }
         }
     }
-
-    // Draw a dummy grid
-    /*glMatrixMode(GL_MODELVIEW);
-    for (float x = -10.0f ; x < 10.0f ; x+=1.0f) {
-        glColor3f(1.0f, 0.0f, 0.0f);
-        glBegin(GL_LINES);
-        glVertex3f(x,0.0f,10.0f);
-        glVertex3f(x,0.0f,-10.0f);
-        glVertex3f(10.0f,-0.0f,x);
-        glVertex3f(-10.0f,-0.0f,x);
-        glEnd();
-    }*/
 }
