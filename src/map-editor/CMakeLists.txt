@@ -6,6 +6,7 @@ include_directories(${XERCESC_INCLUDE_DIRS})
 set(HILDR_LIBRARIES_PATH ${CMAKE_SOURCE_DIR}/src/libraries/)
 
 include_directories(${HILDR_LIBRARIES_PATH}/hildr-map/include)
+include_directories(${HILDR_LIBRARIES_PATH}/hildr-tools/include)
 
 INCLUDE(${QT_USE_FILE})
 ADD_DEFINITIONS(${QT_DEFINITIONS})

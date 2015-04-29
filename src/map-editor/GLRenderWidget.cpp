@@ -1,5 +1,7 @@
 #include "GLRenderWidget.h"
 
+#include <iostream>
+
 GLRenderWidget::GLRenderWidget(QWidget *parent)
 :QGLWidget(parent), m_map(0)
 {
@@ -18,6 +20,13 @@ void GLRenderWidget::resizeGL(int w, int h)
 
 void GLRenderWidget::paintGL()
 {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(0.0, 5.0, 0.0, 0.0, 0.0, 0.0,
+		0.0, 0.0, 1.0); // The camera axis cannot be the viewing direction
+
     if (m_map != 0) {
         m_map->draw();
     }

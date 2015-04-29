@@ -1,10 +1,11 @@
 #include <QGLWidget>
+#include <SFML/OpenGL.hpp>
 
 #include "hildr-map/Map.h"
 
 class GLRenderWidget : public QGLWidget {
 	public:
-		QGLWidget(QWidget *parent);
+		GLRenderWidget(QWidget *parent = 0);
 		void setMap(Map *map);
 		void unsetMap(void);
 	protected:

@@ -12,6 +12,7 @@ class MainWindow : public QMainWindow
 		~MainWindow();
 	private:
 		GLRenderWidget *m_glRender;
+		Map *m_map;
 };
 
 #endif
